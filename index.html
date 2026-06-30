@@ -145,6 +145,8 @@
     .row:last-child { border-bottom: none; }
 
     .row .name { color: #c0c0d8; display: flex; align-items: center; gap: 8px; }
+    .row .name-wrap { display: flex; flex-direction: column; gap: 2px; }
+    .row .name-wrap .desc { font-size: 11px; color: #4b5563; font-weight: 400; }
     .row .dot { width: 8px; height: 8px; border-radius: 50%; }
     .row .amount { font-weight: 600; }
     .row .amount.green { color: #34d399; }
@@ -279,15 +281,15 @@
   <div class="panel">
     <h2>💰 Entradas</h2>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#34d399"></span>PIB — Founders</span>
+      <span class="name"><span class="dot" style="background:#34d399"></span><span class="name-wrap"><span>PIB — Founders</span><span class="desc">Divulgação e venda do programa Founders</span></span></span>
       <span class="amount green">R$ 1.600</span>
     </div>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#60a5fa"></span>Lava Jato (30%)<span class="tag">estimado</span></span>
+      <span class="name"><span class="dot" style="background:#60a5fa"></span><span class="name-wrap"><span>Lava Jato (30%)<span class="tag">estimado</span></span><span class="desc">30% do lucro líquido do negócio</span></span></span>
       <span class="amount green">R$ 1.000</span>
     </div>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#a78bfa"></span>Pods<span class="tag">variável</span></span>
+      <span class="name"><span class="dot" style="background:#a78bfa"></span><span class="name-wrap"><span>Pods<span class="tag">variável</span></span><span class="desc">v350 → R$150 · v55 → R$120</span></span></span>
       <span class="amount gray" id="podsIncome">a definir</span>
     </div>
     <div class="total-row">
@@ -299,35 +301,35 @@
   <div class="panel">
     <h2>💸 Saídas</h2>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#f87171"></span>Aluguel + Condomínio</span>
+      <span class="name"><span class="dot" style="background:#f87171"></span><span class="name-wrap"><span>Aluguel</span><span class="desc">Apartamento — valor já inclui condomínio base</span></span></span>
       <span class="amount red">R$ 3.161</span>
     </div>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#fb923c"></span>Dívida mensal</span>
+      <span class="name"><span class="dot" style="background:#fb923c"></span><span class="name-wrap"><span>Dívida mensal</span><span class="desc">Parcelamento até dezembro/2026</span></span></span>
       <span class="amount red">R$ 1.500</span>
     </div>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#e879f9"></span>Condomínio</span>
+      <span class="name"><span class="dot" style="background:#e879f9"></span><span class="name-wrap"><span>Condomínio</span><span class="desc">Taxa condominial mensal</span></span></span>
       <span class="amount red">R$ 400</span>
     </div>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#38bdf8"></span>Internet</span>
+      <span class="name"><span class="dot" style="background:#38bdf8"></span><span class="name-wrap"><span>Internet</span><span class="desc">Plano de internet residencial</span></span></span>
       <span class="amount red">R$ 120</span>
     </div>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#a78bfa"></span>Diarista</span>
+      <span class="name"><span class="dot" style="background:#a78bfa"></span><span class="name-wrap"><span>Diarista</span><span class="desc">Limpeza doméstica mensal</span></span></span>
       <span class="amount red">R$ 200</span>
     </div>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#fbbf24"></span>Gastos variáveis</span>
+      <span class="name"><span class="dot" style="background:#fbbf24"></span><span class="name-wrap"><span>Gastos variáveis</span><span class="desc">Combustível, lazer, compras gerais</span></span></span>
       <span class="amount orange">R$ 2.000</span>
     </div>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#4ade80"></span>Mercado</span>
+      <span class="name"><span class="dot" style="background:#4ade80"></span><span class="name-wrap"><span>Mercado</span><span class="desc">Alimentação e produtos de higiene</span></span></span>
       <span class="amount orange">R$ 1.000</span>
     </div>
     <div class="row">
-      <span class="name"><span class="dot" style="background:#f97316"></span>Gás</span>
+      <span class="name"><span class="dot" style="background:#f97316"></span><span class="name-wrap"><span>Gás</span><span class="desc">Botijão de gás de cozinha</span></span></span>
       <span class="amount orange">R$ 180</span>
     </div>
     <div class="total-row">
