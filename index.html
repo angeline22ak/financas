@@ -254,7 +254,7 @@
   <div class="card red">
     <div class="label">Gastos Fixos</div>
     <div class="value" id="totalFixed">R$ 0</div>
-    <div class="sub">Aluguel + Dívida</div>
+    <div class="sub">Aluguel, Dívida e mais</div>
   </div>
   <div class="card orange">
     <div class="label">Gastos Variáveis</div>
@@ -307,12 +307,28 @@
       <span class="amount red">R$ 1.500</span>
     </div>
     <div class="row">
+      <span class="name"><span class="dot" style="background:#e879f9"></span>Condomínio</span>
+      <span class="amount red">R$ 400</span>
+    </div>
+    <div class="row">
+      <span class="name"><span class="dot" style="background:#38bdf8"></span>Internet</span>
+      <span class="amount red">R$ 120</span>
+    </div>
+    <div class="row">
+      <span class="name"><span class="dot" style="background:#a78bfa"></span>Diarista</span>
+      <span class="amount red">R$ 200</span>
+    </div>
+    <div class="row">
       <span class="name"><span class="dot" style="background:#fbbf24"></span>Gastos variáveis</span>
       <span class="amount orange">R$ 2.000</span>
     </div>
     <div class="row">
       <span class="name"><span class="dot" style="background:#4ade80"></span>Mercado</span>
       <span class="amount orange">R$ 1.000</span>
+    </div>
+    <div class="row">
+      <span class="name"><span class="dot" style="background:#f97316"></span>Gás</span>
+      <span class="amount orange">R$ 180</span>
     </div>
     <div class="total-row">
       <span class="label">Total saídas</span>
@@ -393,10 +409,14 @@
     fixed: {
       aluguel: 3161,
       divida: 1500,
+      diarista: 200,
+      internet: 120,
+      condominio: 400,
     },
     variable: {
       geral: 2000,
       mercado: 1000,
+      gas: 180,
     },
     debtMonthlyPayment: 1500,
     debtEndDate: new Date('2026-12-31'),
@@ -408,8 +428,8 @@
 
   // ── CALC ───────────────────────────────────────────
   const totalIncome = data.income.pib + data.income.lavatjato + data.income.pods;
-  const totalFixed = data.fixed.aluguel + data.fixed.divida;
-  const totalVariable = data.variable.geral + data.variable.mercado;
+  const totalFixed = data.fixed.aluguel + data.fixed.divida + data.fixed.diarista + data.fixed.internet + data.fixed.condominio;
+  const totalVariable = data.variable.geral + data.variable.mercado + data.variable.gas;
   const totalExpenses = totalFixed + totalVariable;
   const balance = totalIncome - totalExpenses;
 
@@ -468,10 +488,10 @@
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['Aluguel', 'Dívida', 'Variável', 'Mercado'],
+      labels: ['Aluguel', 'Dívida', 'Condomínio', 'Diarista', 'Internet', 'Variável', 'Mercado', 'Gás'],
       datasets: [{
-        data: [data.fixed.aluguel, data.fixed.divida, data.variable.geral, data.variable.mercado],
-        backgroundColor: ['#f87171', '#fb923c', '#fbbf24', '#4ade80'],
+        data: [data.fixed.aluguel, data.fixed.divida, data.fixed.condominio, data.fixed.diarista, data.fixed.internet, data.variable.geral, data.variable.mercado, data.variable.gas],
+        backgroundColor: ['#f87171', '#fb923c', '#e879f9', '#a78bfa', '#38bdf8', '#fbbf24', '#4ade80', '#f97316'],
         borderWidth: 0,
         hoverOffset: 6,
       }]
